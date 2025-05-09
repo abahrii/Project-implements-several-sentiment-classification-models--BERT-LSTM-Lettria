@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  sentiment-nlp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sentiment-nlp-container
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    command: python evaluate-sentiment-analysis-models.py
